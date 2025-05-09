@@ -1,4 +1,4 @@
-const functions = require("firebase-functions");
+//const functions = require("firebase-functions");
 const express = require("express");
 const cors = require("cors");
 const session = require("express-session");
@@ -96,4 +96,10 @@ app.post('/send-email', async (req, res) => {
 });
 
 // Exportar como función HTTP para Firebase
-exports.api = functions.https.onRequest(app);
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
+});
+
+//exports.api = functions.https.onRequest(app);
